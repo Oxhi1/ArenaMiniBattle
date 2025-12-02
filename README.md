@@ -25,5 +25,3 @@ Library klasörü hariç tüm proje dosyalarını bu repoda tutabilirsiniz.
 - Her iki karakter de en az 4 aksiyona uygun şekilde tasarlandı (player için çalışan aksiyonlar; enemy için animasyon/aksiyon trigger'ları).
 - Ana menü, music/sfx slider ve yeni oyun butonu eklemeniz için hazır arayüz noktaları bulunmaktadır.
 
-## License
-Kendi çalışmalarınızda kullanabilirsiniz. Kopyalanan kod veya üçüncü parti içerikleri intihal kontrolünden geçiriniz.
