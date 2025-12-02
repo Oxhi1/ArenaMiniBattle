@@ -1,64 +1,82 @@
- Oynanış (Web Build)
+# 2D Arena Savaş Oyunu
 
- Oyunun itch.io veya simmer.io bağlantısını buraya ekleyeceksin:
+Küçük bir 2D arena içinde oyuncu ve rakibin çeşitli aksiyonlar gerçekleştirdiği, temel oynanış mekaniği ve menü sistemine sahip Unity projesi.
+
+## Oynanış (Web Build)
+
+Oyunun itch.io veya simmer.io bağlantısını buraya ekleyeceksin:
 https://...
 
- Proje Reposu
+## Proje Reposu
 
-Bu repo Unity projesinin tüm dosyalarını içerir.
+Bu repo Unity projesinin tüm dosyalarını içerir.  
 Library klasörü dahil değildir.
 
- Projenin Özeti
+## Projenin Özeti
 
 2D arena şeklinde küçük bir savaş sahası.
 
-Oyuncu:
+### Oyuncu
+- Hareket eder
+- Mermi ateşler
+- Dash yapar
+- Kendini iyileştirir  
+(Toplam 4 aksiyon)
 
-Hareket eder
+### Rakip
+- Hasar alır
+- Stun olur
+- Roar animasyonu oynatır
+- Shield animasyonu oynatır  
+(Toplam 4 aksiyon, AI yoktur)
 
-Mermi ateşler
+Oyuncunun aksiyonları rakibi; rakibin aksiyonları oyuncuyu etkileyebilir niteliktedir.
 
-Dash yapar
+### Ana Menü
+- Yeni oyun başlat
+- Müzik ses ayarı
+- Efekt ses ayarı
 
-Kendini iyileştirir
-(4 adet aksiyon sağlanır)
+## Kurallara Uygunluk Kontrol Listesi
 
-Rakip:
+| Kural                              | Durum | Açıklama                                           |
+|------------------------------------|:-----:|----------------------------------------------------|
+| Oyuncu + Rakip karakter            |  ✔️   | Player ve Enemy prefabları mevcut                  |
+| Player min. 4 aksiyon              |  ✔️   | Hareket, Ateş, Dash, Heal                          |
+| Enemy min. 4 aksiyon               |  ✔️   | Damage alma, Stun, Roar, Shield                    |
+| Aksiyonların karşılıklı etkisi     |  ✔️   | Mermiler sadece rakibi etkiler; enemy hasar verir  |
+| Fizik dışı aksiyonda farklı sonuç  |  ✔️   | Heal / Dash / Shoot farklı etkiler                 |
+| Ana menü + müzik & ses ayarı       |  ✔️   | Slider + butonlar hazır                            |
+| Rakipte AI / IF-ELSE yok           |  ✔️   | Sadece dummy aksiyon tetikleyici mevcut            |
+| Web Build & bağlantı               |  ⬜   | (itch.io linki eklenecek)                          |
 
-Hasar alır
+## Oynanış Kontrolleri
 
-Stun olur
+| Eylem       | Tuş       |
+|-------------|-----------|
+| Hareket     | WASD      |
+| Ateş        | Sol Mouse |
+| Dash        | Space     |
+| Heal        | Q         |
+| Pause Menü  | ESC       |
 
-Roar animasyonu oynatır
+## Teknik Notlar
 
-Shield animasyonu oynatır
-(4 adet aksiyon sağlanır, AI yoktur)
+- Unity ile geliştirilmiştir.
+- Player ve Enemy prefabları sahnede ayrıştırılmıştır.
+- Rakip davranışları AI içermez; yalnızca tetiklenebilir animasyon ve durumlar mevcuttur.
+- Ana menüde ses ayarları slider ile kontrol edilir (Müzik ve Efekt).
 
-Oyuncunun aksiyonları rakibi, rakibin aksiyonları oyuncuyu etkileyebilir niteliktedir.
+## Kurulum ve Çalıştırma
 
-Ana menü:
+1. Unity’nin desteklenen bir sürümü ile projeyi açın.
+2. Proje bağımlılıklarını otomatik olarak yükleyin.
+3. Ana sahneyi (`MainScene` veya projenizdeki başlangıç sahnesi) açıp oynatın.
+4. Web build için:
+   - File > Build Settings > WebGL seçin.
+   - Build alıp çıkan dosyaları itch.io/simmer.io yönergelerine göre yükleyin.
+   - Yükleme tamamlandıktan sonra “Oynanış” bölümündeki bağlantıyı güncelleyin.
 
-Yeni oyun başlat
+## Lisans
 
-Müzik ses ayarı
-
-Efekt ses ayarı
-
- Kurallara Uygunluk Kontrol Listesi
-Kural	Durum	Açıklama
-Oyuncu + Rakip karakter	✔️	Player ve Enemy prefabları mevcut
-Player min. 4 aksiyon	✔️	Hareket, Ateş, Dash, Heal
-Enemy min. 4 aksiyon	✔️	Damage alma, Stun, Roar, Shield
-Aksiyonların karşılıklı etkisi	✔️	Mermiler sadece rakibi etkiler; enemy hasar verir
-Fizik dışı aksiyonda farklı sonuç	✔️	Heal / Dash / Shoot farklı etkiler
-Ana menü + müzik & ses ayarı	✔️	Slider + butonlar hazır
-Rakipte AI / IF-ELSE yok	✔️	Sadece dummy aksiyon tetikleyici mevcut
-Web Build & bağlantı	⬜	(itch.io linki eklenecek)
-
-🕹️ Oynanış Kontrolleri
-Eylem	Tuş
-Hareket	WASD
-Ateş	Sol Mouse
-Dash	Space
-Heal	Q
-Pause Menü	ESC
+Bu proje eğitim amaçlıdır. Gerekli ise lisans bilgisi burada belirtilebilir.
