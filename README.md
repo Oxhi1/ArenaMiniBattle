@@ -1,27 +1,64 @@
-# Arena Mini Battle — Unity Prototype
+ Oynanış (Web Build)
 
-Bu repository, üretici yapay zekâ dersi için hazırlanmış **basit Unity prototip** kaynaklarını içerir.
-Library klasörü hariç tüm proje dosyalarını bu repoda tutabilirsiniz.
+ Oyunun itch.io veya simmer.io bağlantısını buraya ekleyeceksin:
+https://...
 
-## İçerik
-- Basit Player hareket ve ateş sistemi (PlayerController.cs)
-- Bullet prefab script (Bullet.cs)
-- Enemy placeholder script (Enemy.cs) — rakip şu aşamada AI içermez, sadece aksiyonlar için trigger'lar sağlar.
-- Audio ayarları ve UI için örnek scriptler
-- MainMenu ve GameScene için placeholder Unity sahne dosyaları (manuel olarak Unity içinde import edin veya yerlerine taşıyın)
+ Proje Reposu
 
-## Nasıl kullanılır
-1. Unity Hub ile yeni bir 2D Unity projesi oluşturun (ör. 2021.3 LTS veya 2020+).
-2. Bu repodaki `Assets` klasörünü proje köküne kopyalayın.
-3. Unity'de `Assets/Scripts` altındaki scriptleri GameObject'lere bağlayın:
-   - Player prefab: Rigidbody2D, PlayerController, Collider2D
-   - Bullet prefab: Collider2D (Trigger), Bullet script
-   - Enemy prefab: Collider2D (isTrigger=false), Enemy script, Animator (opsiyonel)
-4. `Scenes` klasöründeki sahneleri açıp düzenleyin veya kendi sahnelerinizi yaratın.
-5. WebGL build ayarları ile build alıp itch.io'ya yükleyin.
+Bu repo Unity projesinin tüm dosyalarını içerir.
+Library klasörü dahil değildir.
 
-## Oyun Kuralları - Ders Gereksinimleriyle Uyum
-- Player ve Enemy objeleri var.
-- Her iki karakter de en az 4 aksiyona uygun şekilde tasarlandı (player için çalışan aksiyonlar; enemy için animasyon/aksiyon trigger'ları).
-- Ana menü, music/sfx slider ve yeni oyun butonu eklemeniz için hazır arayüz noktaları bulunmaktadır.
+ Projenin Özeti
 
+2D arena şeklinde küçük bir savaş sahası.
+
+Oyuncu:
+
+Hareket eder
+
+Mermi ateşler
+
+Dash yapar
+
+Kendini iyileştirir
+(4 adet aksiyon sağlanır)
+
+Rakip:
+
+Hasar alır
+
+Stun olur
+
+Roar animasyonu oynatır
+
+Shield animasyonu oynatır
+(4 adet aksiyon sağlanır, AI yoktur)
+
+Oyuncunun aksiyonları rakibi, rakibin aksiyonları oyuncuyu etkileyebilir niteliktedir.
+
+Ana menü:
+
+Yeni oyun başlat
+
+Müzik ses ayarı
+
+Efekt ses ayarı
+
+ Kurallara Uygunluk Kontrol Listesi
+Kural	Durum	Açıklama
+Oyuncu + Rakip karakter	✔️	Player ve Enemy prefabları mevcut
+Player min. 4 aksiyon	✔️	Hareket, Ateş, Dash, Heal
+Enemy min. 4 aksiyon	✔️	Damage alma, Stun, Roar, Shield
+Aksiyonların karşılıklı etkisi	✔️	Mermiler sadece rakibi etkiler; enemy hasar verir
+Fizik dışı aksiyonda farklı sonuç	✔️	Heal / Dash / Shoot farklı etkiler
+Ana menü + müzik & ses ayarı	✔️	Slider + butonlar hazır
+Rakipte AI / IF-ELSE yok	✔️	Sadece dummy aksiyon tetikleyici mevcut
+Web Build & bağlantı	⬜	(itch.io linki eklenecek)
+
+🕹️ Oynanış Kontrolleri
+Eylem	Tuş
+Hareket	WASD
+Ateş	Sol Mouse
+Dash	Space
+Heal	Q
+Pause Menü	ESC
